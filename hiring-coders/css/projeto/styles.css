@@ -2,8 +2,21 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: #a09030;
 }
 
 ul {
     text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body{
+    height: 100vh;
+    /* background: url(pexels.jpg) no-repeat center center fixed;
+    background-size: cover; */
+    /* background: linear-gradient(90deg, #ED2134, #333333); */
+    background-image: linear-gradient(to top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
