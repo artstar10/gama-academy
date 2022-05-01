@@ -26,9 +26,7 @@ header {
     justify-content: space-around;
     align-items: center;
     padding: 10px;
-    /* border-bottom: 1px solid #FFF; */
-    /* box-shadow: 1px, 1px, 10x, 1px #FFF; */
-    /* border-bottom: 15px ridge #FFF; */
+    border-bottom: 12px ridge #FFF;
 }
 
 header ul {
@@ -37,11 +35,15 @@ header ul {
 
 header ul li {
     padding: 5px;
-    /* border-right: 2px dashed #FFF; */
 }
 
-header ul li:first-child {
-    /* border-left: 2px dashed #FFF; */
+header ul li a {
+    transition: 300ms;
+}
+
+header ul li a:hover {
+    color: #c0a717;
+    text-decoration: underline;
 }
 
 .container {
@@ -70,8 +72,28 @@ header ul li:first-child {
 
 .form input {
     width: 50%;
+    padding:  5px 10px;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
 }
 
 .form button {
     width: 15%;
+    padding:  5px 10px;
+    background: linear-gradient(to right #c0a717 50%, #9c551b, 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #FFF;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+    border-radius: 0px 5px 5px 0px;
+    margin-top: 20px;
+    margin-left: -4px;
+}
+
+.form button:hover{
+    background-position: left bottom;
+    color: #FFF
 }
