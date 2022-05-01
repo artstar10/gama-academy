@@ -22,7 +22,8 @@ body{
 }
 
 .container {
-    text-align: center;}
+    text-align: center;
+}
 
 .container .name h1 {
     font-size: 60px;
@@ -30,4 +31,22 @@ body{
 
 .container .name h5 {
     font-size: 25px;
+}
+
+#about p {
+ max-width: 600px;  
+ margin: auto;
+}
+
+.form {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.form input {
+    width: 50%;
+}
+
+.form button {
+    width: 15%;
 }
