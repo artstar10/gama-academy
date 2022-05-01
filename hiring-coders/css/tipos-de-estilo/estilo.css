@@ -1,10 +1,18 @@
+/* tags */
 body {
-    color: red;
+    text-align: center;
 }
-li {
-    text-decoration: underline;
-    color: black;
+/* IDs */
+#login {
+    background-color: black;
+    color: white;
 }
-ul {
-    border: 1px solid black;
+
+#registro {
+    background-color: blue;
+    color: white;
+}
+/* classes */
+.copy {
+    font-size: 8px;
 }
