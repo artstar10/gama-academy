@@ -5,11 +5,11 @@ if(nome === "artstar10"){
     console.log(`Que pena! seu nome não é artstar10`)
 }
 
-// MENU DE ATENDIMENTO PARA CLIENTE
+// MENU DE ATENDIMENTO PARA CLIENTES
 pix = 1;
 recarga = 2;
-opcao = 1 // escolha do cliente é guardada aqui
-switch (opcao) {//SWITCH CASE
+opcao = 2 // SIMULANDO: AQUI O USUÁRIO ESCOLHEU A OPÇÃO 1 QUE É DE PIX
+switch (opcao) {
     case 1:
         console.log(`você escolheu a opcao de pix`)
         break;
