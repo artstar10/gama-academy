@@ -5,7 +5,7 @@ function App(props) {
   return (
     <> 
     <p>{ usuario }</p>
-      <input className='usuarioInput' placeholder='Usuário' onChange={e => setUsuario(e.target.value)} />
+      <input className='usuarioInput' placeholder='Usuário' value={usuario} onChange={e => setUsuario(e.target.value)} />
       <button type="button">Pesquisar</button>
     </>
   );
