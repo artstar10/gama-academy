@@ -4,7 +4,8 @@ function App(props) {
   const [usuario, setUsuario ] = useState('');
   return (
     <> 
-      <input className='usuarioInput' placeholder='Usuário' onChange={e => console.log(e.target.value)} />
+    <p>{ usuario }</p>
+      <input className='usuarioInput' placeholder='Usuário' onChange={e => setUsuario(e.target.value)} />
       <button type="button">Pesquisar</button>
     </>
   );
