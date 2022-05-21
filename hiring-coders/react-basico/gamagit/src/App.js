@@ -4,7 +4,7 @@ import axios from 'axios';
 function App(props) {
   const [usuario, setUsuario ] = useState('');
   function handlePesquisa() {
-    axios.get('https://api.github.com/users/artstar10/repos').then(response => console.log(response));
+    axios.get('https://api.github.com/users/artstar10/repos').then(response => console.log(response.data));
   }
   return (
     <> 
