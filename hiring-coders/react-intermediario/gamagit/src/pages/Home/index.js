@@ -21,7 +21,7 @@ function App(props) {
       <S.Container >
         <S.Input className='usuarioInput' placeholder='Usuário' value={usuario} onChange={e => setUsuario(e.target.value)} />
         <S.Button type="button" onClick={handlePesquisa}>Pesquisar</S.Button >
-    </S.Container>
+      </S.Container>
   );
 }
 
