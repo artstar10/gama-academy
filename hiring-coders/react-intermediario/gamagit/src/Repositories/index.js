@@ -7,7 +7,7 @@ export default function Repositories() {
         const repositoriesName = localStorage.getItem('repositoriesName')
         repositoriesName = JSON.parse(repositoriesName);
         setRepositories(repositoriesName);
-        localStorage.clear(repositoriesName);
+        localStorage.clear();
     }, []);
 
     return(
@@ -16,7 +16,7 @@ export default function Repositories() {
              <S.List>
                { repositories.map(repository => {
                    return(
-                       <S.ListItem>{ repository }</S.ListItem>
+                       <S.ListItem>Repositório: { repository }</S.ListItem>
                    )
                })}           
                              
