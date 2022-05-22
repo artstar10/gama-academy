@@ -7,22 +7,19 @@ export default function Repositories() {
         const repositoriesName = localStorage.getItem('repositoriesName')
         repositoriesName = JSON.parse(repositoriesName);
         setRepositories(repositoriesName);
+        localStorage.clear(repositoriesName);
     }, []);
 
     return(
         <S.Container>
             <S.Title>Repositórios</S.Title>
              <S.List>
-                <S.ListItem>Repositório: Nome Repositório</S.ListItem>              
-                <S.ListItem>Repositório: Nome Repositório</S.ListItem>              
-                <S.ListItem>Repositório: Nome Repositório</S.ListItem>              
-                <S.ListItem>Repositório: Nome Repositório</S.ListItem>              
-                <S.ListItem>Repositório: Nome Repositório</S.ListItem>              
-                <S.ListItem>Repositório: Nome Repositório</S.ListItem>              
-                <S.ListItem>Repositório: Nome Repositório</S.ListItem>              
-                <S.ListItem>Repositório: Nome Repositório</S.ListItem>              
-                <S.ListItem>Repositório: Nome Repositório</S.ListItem>              
-                <S.ListItem>Repositório: Nome Repositório</S.ListItem>              
+               { repositories.map(repository => {
+                   return(
+                       <S.ListItem>{ repository }</S.ListItem>
+                   )
+               })}           
+                             
              </S.List>
         </S.Container>
     )
