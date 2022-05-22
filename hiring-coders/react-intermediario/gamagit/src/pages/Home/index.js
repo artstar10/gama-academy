@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import * as S from './styled';
+import { useHistory } from "react-router-dom";
 
 function App(props) {
   const [usuario, setUsuario ] = useState('');
@@ -10,7 +11,7 @@ function App(props) {
         const repositories = response.data;
         const repositoriesName = [];
         repositories.map((repository) => {
-            repositoriesName.push(repository.name);
+          useHistory.push(repository.name);
         });
         localStorage.setItem('repositoriesName', JSON.stringify(repositoriesName))
     });
