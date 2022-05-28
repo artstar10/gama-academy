@@ -1,4 +1,4 @@
-import { createServer } from "http";
+import { createServer } from "http"; // readicionando main
 import { readFile } from "fs";
 import { resolve } from "path"; // para localizar arquivos em diretórios
 import { parse } from "querystring"; // para resolver problema de formatação
