@@ -1,8 +1,6 @@
 <h3> 👨‍💼 &nbsp;Sobre o repositório </h3>
 
-Explorando o Estilo Arquitetural REST com Node.js
-
-Criando API REST com o módulo http do Node.js
+Esse repositório mostra como criar um servidor Node.js com rotas de aplicação utilizando o pacote esm e módulos do Node.js
 
 - Node.js
 - Javascript
@@ -50,8 +48,14 @@ Criando API REST com o módulo http do Node.js
 
 <h3> Endpoints/Rotas local do projeto for Insomnia and Postman </h3>
 
-### rota de status
+### rota principal da aplicação com ip o 127.0.0.1
+http://127.0.0.1:8000
+### rota status
 http://localhost:8000/status
+### rota login
+http://localhost:8000/sign-in
+### rota home
+http://localhost:8000/home
 
 
 <a href="https://github.com/artstar10">
@@ -75,6 +79,16 @@ https://dev.to/envoy_/150-badges-for-github-pnk#database
 # esm
 ```
 https://www.npmjs.com/package/esm
+
+```
+
+# Módulos utilizados no servidor Node.js do projeto
+```
+http
+fs
+path
+querystring
+
 
 ```
 
