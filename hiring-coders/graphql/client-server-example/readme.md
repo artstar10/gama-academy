@@ -2,7 +2,7 @@
 
 Explorando o Estilo Arquitetural REST com Node.js
 
-Criando API REST com Node.js e Express
+Criando API REST com o módulo http do Node.js
 
 - Node.js
 - Javascript
@@ -39,40 +39,19 @@ Criando API REST com Node.js e Express
 
 ### para instalar o esm
 > npm i esm
+> npm i
 
 
+<h3> para executar a aplicação </h3>
 
-<h3> para instalar e executar a aplicação </h3>
-
-### para instalar dependências da aplicação
-> npm i 
 ### para executar a aplicação
 > npm run start
+> PORT=3000 npm run start esse comando seta a porta 3000 na variável no git bash here
 
-<h3> Endpoints local do projeto for Insomnia and Postman </h3>
+<h3> Endpoints/Rotas local do projeto for Insomnia and Postman </h3>
 
 ### rota de status
-http://localhost:3000/status
-### rota de usuários
-http://localhost:3000/users
-### rota de usuários por id
-http://localhost:3000/users/1
-### rota para cadastro de usuários
-http://localhost:3000/users
-### rota para atualizar de usuários por id
-http://localhost:3000/users/12345
-### rota para deletar usuários por id
-http://localhost:3000/users/12345
-
-
-<h3> Endpoints do projeto com conexão no banco de dados elephantsql </h3>
-
-### rota de usuários
-http://localhost:3000/users
-### rota de usuários por id
-http://localhost:3000/users/id$do$banco$de$dados$elephantsql$aqui
-
-
+http://localhost:8000/status
 
 
 <a href="https://github.com/artstar10">
