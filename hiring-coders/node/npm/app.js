@@ -12,13 +12,13 @@ const server = http.createServer((req, res) => {
 
   // pegar a pergunta na url
   const params = queryString.parse(url.parse(req.url, true).search);
-  console.log(params);
+  // console.log(params);
   // verificar a pergunta e escolher uma resposta
   // retornar a resposta escolhida
 
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+  res.end(params.pergunta);
 });
 
 // execução
