@@ -12,16 +12,29 @@ const server = http.createServer((req, res) => {
 
   // pegar a pergunta na url
   const params = queryString.parse(url.parse(req.url, true).search);
-  // console.log(params);
+  
   // verificar a pergunta e escolher uma resposta
+  let resposta;
+  if (params.pergunta == 'melhor-filme') {
+    resposta = 'star wars';
+  }
+  else if (params.pergunta == 'melhor-tecnologia-backend') {
+    resposta = 'node.js';
+  }
+  else{
+    resposta = 'não sei, desculpe :(';
+  }
   // retornar a resposta escolhida
 
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end(params.pergunta);
+  res.end(resposta);
 });
 
 // execução
 server.listen(port, hostname, () => {
   console.log(`npm: Server running at http://${hostname}:${port}/`);
 });
+
+
+// http://localhost:3000/?pergunta=melhor-filme
