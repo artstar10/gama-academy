@@ -63,6 +63,12 @@ http://localhost:3000/status
 https://dev.to/envoy_/150-badges-for-github-pnk#database
 
 ```
+# Documentações de apoio sobre Node.js
+```
+https://devdocs.io/node/
+https://nodejs.org/pt-br/docs/
+
+```
 
 
 
