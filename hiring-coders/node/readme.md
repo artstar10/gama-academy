@@ -69,6 +69,8 @@ https://devdocs.io/node/
 https://nodejs.org/pt-br/docs/
 https://www.npmjs.com/
 https://devdocs.io/npm/
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
+https://www.w3schools.com/nodejs/
 
 ```
 
