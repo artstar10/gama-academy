@@ -35,10 +35,15 @@ Exemplo de como utilizar os métodos http GET e POST
 
 ### comandos para instalar as dependências
 > npm i express
+
 > npm i sucrase -D
+
 > npm i nodemon -D
+
 > npm i sequelize
+
 > npm i --save-dev sequelize-cli
+
 > npm i pg pg-hstore
 
 ```
