@@ -18,9 +18,9 @@ Exemplo de como utilizar os métodos http GET e POST
   [![Insomnia: SEU NOME](https://img.shields.io/badge/-Insomnia-333333?style=flat&logo=insomnia&link=https://insomnia.rest/download)](https://insomnia.rest/download)
   [![Postman: SEU NOME](https://img.shields.io/badge/-Postman-333333?style=flat&logo=postman&link=https://www.postman.com/downloads/)](https://www.postman.com/downloads)
 
-<!-- **Banco de dados**
+**Banco de dados**
 
-  [![MongoDB: SEU NOME](https://img.shields.io/badge/-MongoDB-white?style=flat&logo=mongodb&logoColor=green&link=https://account.mongodb.com/account/login)](https://account.mongodb.com/account/login) -->
+  [![MongoDB: SEU NOME](https://img.shields.io/badge/Postgress-white?style=flat&logo=postgresql&logoColor=blue&link=https://www.postgresql.org/account/login/)](https://www.postgresql.org/account/login/)
 
 **DevOps**
 
