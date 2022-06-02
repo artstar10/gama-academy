@@ -61,6 +61,8 @@ Exemplo de como utilizar os métodos http GET e POST
   
 ```
 
+### comando para criar migrations
+> npx sequelize migration:create --name=create-users
 ### para instalar dependências da aplicação
 > npm i 
 
