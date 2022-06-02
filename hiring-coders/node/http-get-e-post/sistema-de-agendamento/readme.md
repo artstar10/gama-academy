@@ -35,13 +35,16 @@ Exemplo de como utilizar os métodos http GET e POST
 
 ### comandos para instalar as dependências
 > npm i express
+> npm i sucrase -D
+> npm i nodemon -D
 ```
 "dependencies": {
     "express": "^4.18.1"
   }
 
   "devDependencies": {
-   <!-- to-do -->
+    "nodemon": "^2.0.16",
+    "sucrase": "^3.21.0"
   }
   
 ```
