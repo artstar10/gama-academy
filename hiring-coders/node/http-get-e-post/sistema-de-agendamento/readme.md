@@ -37,13 +37,20 @@ Exemplo de como utilizar os métodos http GET e POST
 > npm i express
 > npm i sucrase -D
 > npm i nodemon -D
+> npm i sequelize
+> npm i --save-dev sequelize-cli
+> npm i pg pg-hstore
+
 ```
 "dependencies": {
-    "express": "^4.18.1"
-  }
-
+    "express": "^4.18.1",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.20.1"
+  },
   "devDependencies": {
     "nodemon": "^2.0.16",
+    "sequelize-cli": "^6.4.1",
     "sucrase": "^3.21.0"
   }
   
