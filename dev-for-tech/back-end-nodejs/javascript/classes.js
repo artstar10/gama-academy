@@ -12,4 +12,4 @@ class Livro {
 //criando objeto livro
 let livro = new Livro("Algoritmos para programação", "Arthur", 500);
 let outroLivro = new Livro("Lógica para programação", "Giulia", 100);
-console.log(outroLivro.ler());
+console.log(livro, outroLivro);
