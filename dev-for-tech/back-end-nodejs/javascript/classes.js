@@ -1,21 +1,16 @@
-class Livro {
-    constructor(titulo, autor, paginas) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.paginas = paginas;
+class Pessoa {
+    constructor(nome) {
+        this._nome = nome;
     }
 
-    ler(){
-        return `Estou lendo ${this.titulo}`
+    get nome(){
+        return this._nome;
     }
-}
-
-class ITLivro extends Livro {
-    constructor(titulo, autor, paginas, tecnologia) {
-       super(titulo, autor, paginas)
-        this.tecnologia = tecnologia;
+    set nome(value){
+        this._nome = value;
     }
 }
 
-let itLivro = new ITLivro("algoritmos","Arthur", 500, 'Logica de programação');
-console.log(itLivro.titulo);
+let pessoa = new Pessoa('Arthur');
+pessoa.nome = "Thur"
+console.log(pessoa.nome);
