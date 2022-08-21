@@ -1,11 +1,12 @@
-// operadores de atribuição
-// = atribuição
+// operadores de comparação
+// ==
+// ===
+// !=
+// < ou <=
+// > ou >=
 
-// atribuição de soma
-var x = 1
-var y = 3
-console.log(x+=y);
-console.log(x-=y);
-console.log(x*=y);
-console.log(x/=y);
-console.log(x%=y);
+//operadores lógicos
+
+// e && - AND
+// ou || - OR, OU
+//  ! NOT - Negação
