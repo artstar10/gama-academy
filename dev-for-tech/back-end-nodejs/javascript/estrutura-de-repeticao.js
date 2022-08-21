@@ -1,5 +1,6 @@
 var i = 0;
-while (i < 10) {
+
+do {
     console.log(i);
-    i++
-}
+    i++;
+}while (i < 10)
