@@ -9,7 +9,13 @@ class Livro {
         return `Estou lendo ${this.titulo}`
     }
 }
-//criando objeto livro
-let livro = new Livro("Algoritmos para programação", "Arthur", 500);
-let outroLivro = new Livro("Lógica para programação", "Giulia", 100);
-console.log(livro, outroLivro);
+
+class ITLivro extends Livro {
+    constructor(titulo, autor, paginas, tecnologia) {
+       super(titulo, autor, paginas)
+        this.tecnologia = tecnologia;
+    }
+}
+
+let itLivro = new ITLivro("algoritmos","Arthur", 500, 'Logica de programação');
+console.log(itLivro.titulo);
