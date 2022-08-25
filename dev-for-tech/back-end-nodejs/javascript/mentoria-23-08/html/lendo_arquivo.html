@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página para leitura de arquivo</title>
+</head>
+<body>
+    <!--Leitura de arquivo do tipo txt-->
+    <h1>Leitura de Arquivo</h1>
+    <br>
+    <!--Procedimento para por um componente do HTML para selecionar um arquivo-->
+    <input type="file" onchange="loadFile(this.files[0])">
+    <br>
+    
+    
+    <!--Criar a área para demonstrar os registros do arquivo-->
+    <textarea id="output"></textarea>
+
+
+    <!--Chamar o script que irá ler o arquivo e enviar os dados para o campo acima-->
+    <script>
+        async function loadFile(file){
+            let text =await file.text();
+            document.getElementById('output').textContent=text;
+        }
+    </script>
+</body>
+</html>
