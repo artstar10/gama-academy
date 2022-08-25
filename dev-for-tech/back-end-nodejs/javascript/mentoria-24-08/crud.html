@@ -110,35 +110,30 @@
             };
 
             //Montando a nossa função para editar os registros 
-            this.Edit = function(item) {
-
+            this.Edit = function (item) {
                 var el = document.getElementById('edit-name');
-                //Exibe o valor adicionado ao campo
-
+                // Exibe o valor no campo
                 el.value = this.countries[item];
-                //Mostrar o campo que está sendo selecionado
+                // Mostra os campos
                 document.getElementById('spoiler').style.display = 'block';
-                document.getElementById('saveEdit').onsubmit = ()=> {
+                self = this;
 
-                    //Obtendo o valor do campo
+                document.getElementById('saveEdit').onsubmit = function () {
+                    // Obter valor
                     var country = el.value;
-                    //alert(country);
 
                     if (country) {
-                        //Editar um valor
-                        this.countries.splice(item, 1, country.trim());
-                        //Chamada da lista para atualizar o valor digitado no campo
-                        this.FetchAll();
-
-                        //Ocultar os campos
+                        // Edita o valor
+                        self.countries.splice(item, 1, country.trim());
+                        // Exibe a nova lista
+                        self.FetchAll();
+                        //Ocultar campos
                         CloseInput();
-
                     }
                 }
-
             };
 
-            
+
 
         }
 
