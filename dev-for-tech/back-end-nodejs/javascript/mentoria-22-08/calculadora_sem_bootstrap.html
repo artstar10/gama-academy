@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suuuper Calculadora</title>
+
+    <!--Criar o estilo do display-->
+    <style>
+
+        #display{
+            width: 250px;
+            height: 40px;
+            background-color: black;
+            margin: 4px;
+            color:white;
+            font-size: 18px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+
+       /*Padrão botões*/
+       #tecla0{
+        width: 120px;
+        height: 30px;
+       }
+        
+    </style>
+
+    <!--Criando funções em JavaScript para a nossa calculadora-->
+    <script>
+        /*Criando uma função para inserir valores no nosso display da calculadora*/
+        function inserir(num){
+            var numero=document.getElementById('display').innerHTML;
+            document.getElementById('display').innerHTML=numero+num;
+
+        }
+
+        /*Limpando o conteúdo do nosso display*/
+        function limpar(){
+            document.getElementById('display').innerHTML=" ";
+        }
+
+    </script>
+    
+    
+
+
+</head>
+<body>
+    
+    <!--Criando o nosso display da calculadora-->
+    <p id="display"></p>
+
+    <!--Criando os  botões de interação da calculadora-->
+    <button id="tecla1" onclick="inserir('1')">1</button>
+    <button id="tecla2" onclick="inserir('2')">2</button>
+    <button id="tecla3">3</button>
+    <button id="tecla4">4</button><br><br>
+    <button id="tecla5">5</button>
+    <button id="tecla6">6</button>
+    <button id="tecla7">7</button>
+    <button id="tecla8">8</button><br><br>
+    <button id="tecla9">9</button>
+    <button id="tecla0">0</button>
+    <button id="tecla+" onclick="inserir('+')">+</button>
+    <button id="tecla-">-</button>
+    <button id="tecla*">*</button>
+    <button id="tecla/">/</button>
+    <button id="tecla/" onclick="inserir('.')">.</button>
+    <button id="tecla=" onclick="inserir('=')">=</button>
+    <button id="tecla=" onclick="limpar()">C</button>   
+    
+
+
+
+</body>
+</html>
