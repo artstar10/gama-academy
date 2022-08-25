@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Registros</title>
+
+    <!--Como ver a cor de um CSS através de um HexaDecimal-->
+    <style>
+        h2 {
+            color: black;
+        }
+
+        #spoiler {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--Adicionando registros na nossa página-->
+    <h2>Sistema de Controle de Registros - CRUD</h2>
+    <form action="javascript:void(0);" method="POST" onsubmit="app.Add()">
+        <input type="text" id="add-name" placeholder="Digite um nome">
+        <input type="submit" value="Adicionar">
+    </form>
+
+    <!--Área destinada para editar/modificar os registros -->
+    <div id="spoiler" role="aria-hidden">
+        <form action="javascript:void(0);" method="POST" id="saveEdit">
+            <input type="text" id="edit-name">
+            <input type="submit" value="Editar" /><a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+
+        </form>
+    </div>
+
+    <!--Contador de Registros-->
+    <p id="counter"></p>
+
+    <!--Criando uma área com a tabela para mostrar os registros armazenados-->
+    <table border="0">
+        <!--Criando uma linha na tabela-->
+        <tr>
+            <th>Tabela de Registros</th>
+            <tbody id="countries">
+
+            </tbody>
+        </tr>
+    </table>
+
+    <!--Desenvolvendo as funções dentro do JavaScript para gerar o nosso CRUD-->
+    <script>
+        var app = new function () {
+            this.el = document.getElementById('countries');
+            this.countries = ['Erica', 'Ailson', 'Arthur', 'Gilmar', 'Vagner', 'Victor', 'Ricardo'];
+
+            this.Count = function (data) {
+                var el = document.getElementById('counter');
+                var name = 'Registro';
+
+                if (data) {
+                    if (data > 1) {
+                        name = 'Registros';
+                    }
+                    el.innerHTML = data + ' - ' + name;
+                } else {
+                    el.innerHTML = 'Nenhum ' + name;
+                }
+            }
+
+            // Monta a nossa lista de nomes com base na variável que foi setada
+            this.FetchAll = function () {
+                var data = '';
+                if (this.countries.length > 0) {
+                    //alert("contou");
+                    //Criando um laço de repetição para montar os registros da tabela
+                    for (var i = 0; i < this.countries.length; i++) {
+                        //alert("gera registro");
+                        data += '<tr>';
+                        data += '<td>' + this.countries[i] + '<td>';
+                        data += '<td><button onclick="app.Edit(' + i + ')">Editar</button></td>';
+                        data += '<td><button onclick="app.Delete(' + i + ')">Excluir</button></td>';
+                        data += '</tr>';
+                    }
+                }
+                this.Count(this.countries.length);
+                return this.el.innerHTML = data;
+
+            };
+
+            //Montando a função para adicionar um novo registro
+            this.Add = function () {
+                alert("adiconar");
+                el = document.getElementById('add-name');
+
+                //Pegando o valor digitado na caixa de texto
+                var country = el.value;
+                if (country) {
+                    // Adicionando um novo valor
+                    this.countries.push(country.trim());
+                    //Redefinindo um valor de entrada
+                    el.value = '';
+                    //Chama a função principal para atualizar os registros da nossa tabela
+                    this.FetchAll();
+
+                }
+            };
+
+            //Montando a nossa função para editar os registros 
+            this.Edit = function(item) {
+
+                var el = document.getElementById('edit-name');
+                //Exibe o valor adicionado ao campo
+
+                el.value = this.countries[item];
+                //Mostrar o campo que está sendo selecionado
+                document.getElementById('spoiler').style.display = 'block';
+                document.getElementById('saveEdit').onsubmit = ()=> {
+
+                    //Obtendo o valor do campo
+                    var country = el.value;
+                    //alert(country);
+
+                    if (country) {
+                        //Editar um valor
+                        this.countries.splice(item, 1, country.trim());
+                        //Chamada da lista para atualizar o valor digitado no campo
+                        this.FetchAll();
+
+                        //Ocultar os campos
+                        CloseInput();
+
+                    }
+                }
+
+            };
+
+            
+
+        }
+
+        app.FetchAll();
+
+        // Função para fechar a janela de edição
+        function CloseInput() {
+            document.getElementById('spoiler').style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
