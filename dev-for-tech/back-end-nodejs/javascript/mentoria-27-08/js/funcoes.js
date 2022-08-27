@@ -167,7 +167,6 @@ $(function(){
 		Listar();
 	});
 
-	// ultimo codigo
 	//var ultimo = JSON.parse(tbAlunos.slice(-1));
 	//var ultconv = parseInt(ultimo.Codigo);
 	
