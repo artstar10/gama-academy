@@ -18,50 +18,59 @@ $(function(){
 	// Função para adicionar registros
 	function Adicionar(){
 		//variável para verificar se número de código já existe
-		var cli = GetCliente("RM", $("#txtRM").val());
+		var alu = GetCliente("RM", $("#txtRM").val());
 
 	// Caso existe é informado ao cliente
-		if(cli != null){
+		if(alu != null){
 			alert("RM já cadastrado.");
 			return;
 		}
 	// caso contrário insere
-		var cliente = JSON.stringify({
-			RM   		: $("#txtRM").val(),
+		var aluno = JSON.stringify({
+			RM   			: $("#txtRM").val(),
 			Nome     		: $("#txtNome").val(),
 			Email 			: $("#txtEmail").val(),
+			Curso			: $("#selectCurso :selected").val(),
 			Celular   		: $("#txtCelular").val(),
-			Curso				: $("#selectCurso :selected").text(),
 			DtCad    		: $("#txtDataCadastro").val(),
 			HoraCad   		: $("#txtHoraCadastro").val(),
-			DtRealizacao    : $("#txtDataRealizacaoCurso").val(),
-			HoraRealizacao  : $("#txtHoraRealizacaoCurso").val()
+			DtRealizacao    : $("#txtDataRealizacao").val(),
+			HoraRealizacao  : $("#txtHoraRealizacao").val()
 		});
 
-		
-		tbAlunos.push(cliente);
-		localStorage.setItem("tbAlunos", JSON.stringify(tbAlunos));
-		alert("Registro adicionado.");
-		return true;
+		var valida = ValidarCampos(aluno);
+
+		if(valida){
+
+			alert(valida);
+			return false;
+
+		}else{
+
+			tbAlunos.push(aluno);
+			localStorage.setItem("tbAlunos", JSON.stringify(tbAlunos));
+			alert("Registro adicionado.");
+			
+			return true;
+		}
+
 		
 	}
 	
 
 	// Função para editar clientes
 	function Editar(){
-		
 		tbAlunos[indice_selecionado] = JSON.stringify({
 				RM   			: $("#txtRM").val(),
 				Nome     		: $("#txtNome").val(),
 				Email 			: $("#txtEmail").val(),
-				Curso				: $("#selectCurso :selected").text(),
 				Celular   		: $("#txtCelular").val(),
+				Curso			: $("#selectCurso :selected").val(),
 				DtCad    		: $("#txtDataCadastro").val(),
 				HoraCad   		: $("#txtHoraCadastro").val(),
-				DtRealizacao    : $("#txtDataRealizacaoCurso").val(),
-				HoraRealizacao  : $("#txtHoraRealizacaoCurso").val()
+				DtRealizacao    : $("#txtDataRealizacao").val(),
+				HoraRealizacao  : $("#txtHoraRealizacao").val()
 			});
-			
 		localStorage.setItem("tbAlunos", JSON.stringify(tbAlunos));
 		alert("Informações editadas.")
 		operacao = "A";
@@ -83,6 +92,7 @@ $(function(){
 			"	<th>Hora Cadastro</th>"+
 			"	<th>Data a Realizar o Curso</th>"+
 			"	<th>Hora a Realizar o Curso</th>"+
+			"	<th colspan=3>Ações</th>"+
 			"	</tr>"+
 			"</thead>"+
 			"<tbody>"+
@@ -92,20 +102,21 @@ $(function(){
 		// Malha de repetição para inserir todos os registros
 		 for(var i in tbAlunos){
 			var alu = JSON.parse(tbAlunos[i]);
+			
 			// Formatar data para o format brasileiro dia, mes, ano
 			var dtfinalCad = alu.DtCad.substring(8,10) + "/" +alu.DtCad.substring(5,7)  +"/"  +alu.DtCad.substring(0,4);
 			var dtfinalRealizar = alu.DtRealizacao.substring(8,10) + "/" +alu.DtRealizacao.substring(5,7)  +"/"  +alu.DtRealizacao.substring(0,4);
 		  	$("#tblListar tbody").append("<tr>"+
-										 "	<td>"+alu.RM+"</td>" + 
-										 "	<td>"+alu.Nome+"</td>" + 
-										 "	<td>"+alu.Celular+"</td>" + 
-										 "	<td>"+alu.Email+"</td>" + 
-										 "	<td>"+alu.Curso+"</td>" + 
-										 "	<td>"+dtfinalCad+"</td>" + 
-										 "	<td>"+alu.HoraCad+"</td>" + 
-										 "	<td>"+dtfinalRealizar+"</td>" + 
-										 "	<td>"+alu.HoraRealizacao+"</td>" +
-										 "	<td><img src='../img/edit.png' alt='"+i+"' class='btnEditar'/><img src='../img/delete.png' alt='"+i+"' class='btnExcluir'/></td>" + 
+				"	<td>"+alu.RM+"</td>" + 
+				"	<td>"+alu.Nome+"</td>" + 
+				"	<td>"+alu.Celular+"</td>" + 
+				"	<td>"+alu.Email+"</td>" + 
+				"	<td>"+alu.Curso+"</td>" + 
+				"	<td>"+dtfinalCad+"</td>" + 
+				"	<td>"+alu.HoraCad+"</td>" + 
+				"<td>"+dtfinalRealizar+"</td>" + 
+				"	<td>"+alu.HoraRealizacao+"</td>" +
+				"	<td><img src='../img/edit.png' alt='"+i+"' class='btnEditar'/><img src='../img/delete.png' alt='"+i+"' class='btnExcluir'/></td>" + 
 		  								 "</tr>");
 		 }
 	}
@@ -128,7 +139,34 @@ $(function(){
         }
         return alu;
 	}
-	// chamda da função listar clientes
+	//função para validar os campos
+	function ValidarCampos(aluno){
+
+		var alunoJson = JSON.parse(aluno);
+
+		if(!alunoJson.RM){
+			return 'O campo RM é obrigatório!';
+		}
+
+		if(!alunoJson.Nome){
+			return 'O campo Nome é obrigatório!';
+		}
+
+		if(alunoJson.Curso == ''){
+			return 'O campo Curso é obrigatório!';
+		}
+
+		if( !alunoJson.DtCad || !alunoJson.HoraCad ){
+			return 'Os campos Data do Cadastro e Hora do Cadastro são obrigatórios!';
+		}
+
+		if(!alunoJson.DtRealizacao || !alunoJson.HoraRealizacao){
+			return 'Os campos Data da Realização do Curso e Hora da Realização do Curso são obrigatórios!';
+		}
+
+		return null;
+	}
+	// chamada da função listar clientes
 	Listar();
 
 	// Ação com base nos eventos de formulário
@@ -150,8 +188,8 @@ $(function(){
 		$("#selectCurso :selected").text(alu.Curso),
 		$("#txtDataCadastro").val(alu.DtCad);
 		$("#txtHoraCadastro").val(alu.HoraCad);
-		$("#txtDataRealizacaoCurso").val(alu.DtRealizacao);
-		$("#txtRealizacaoCurso").val(alu.HoraRealizacao);
+		$("#txtDataRealizacao").val(alu.DtRealizacao);
+		$("#txtHoraRealizacao").val(alu.HoraRealizacao);
 		$("#txtRM").attr("readonly","readonly");
 		$("#txtNome").focus();
 		$("#txtNome").attr("readonly", true);
@@ -167,11 +205,15 @@ $(function(){
 		Listar();
 	});
 
-	//var ultimo = JSON.parse(tbAlunos.slice(-1));
-	//var ultconv = parseInt(ultimo.Codigo);
-	
-		//	$("#txtCodigo").val(ultconv+1);
-// status
+	// ultimo codigo
+	if (tbAlunos.length > 0){
+		var ultimo = JSON.parse(tbAlunos.slice(-1));
+		var ultconv = parseInt(ultimo.RM);
+		$("#txtRM").val(ultconv+1);
+	}
+		
+
+// status 
 $("#txtNome").change(function () {
 	//alert( $( this ).val() );
 	var pessoa = $(this).val();
@@ -213,14 +255,12 @@ $("#txtNome").change(function () {
 	//var str_hora = hora + ':' + min + ':' + seg;
 
 	// Mostra o resultado
-	//alert('Hoje é ' + str_data + ' às ' + str_hora);
+	//alert('Hoje é ' + str_data_Brazil + ' às ' + hora_geral);
 	$("#txtDataCadastro").val(str_data_Brazil);
 	$("#txtHoraCadastro").val(hora_geral);
-	$("#txtDataRealizacaoCurso").val(str_data_Brazil);
-	$("#txtHoraRealizacaoCurso").val(hora_geral);
+	$("#txtDataRealizacao").val(str_data_Brazil);
+	$("#txtHoraRealizacao").val(hora_geral);
 
 	//alert(hora_geral);
-
-
 
 });
