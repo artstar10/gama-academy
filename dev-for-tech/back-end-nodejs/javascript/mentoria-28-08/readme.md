@@ -8,8 +8,6 @@ Repositório do projeto de Sistema de Controle de Matrículas da Gama Academy
 
 <h3> :rocket: &nbsp;Tecnologias utilizadas </h3>
 
-**Tecnologias**
-
   ![JavaScript](https://img.shields.io/badge/-JavaScript-333333?style=flat&logo=javascript)
   ![Html](https://img.shields.io/badge/-html-333333?style=flat&logo=html)
   ![Css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) 
@@ -52,12 +50,8 @@ https://dev.to/envoy_/150-badges-for-github-pnk#database
 ```
 # Documentações de apoio sobre Javascript
 ```
-https://devdocs.io/node/
-https://nodejs.org/pt-br/docs/
-https://www.npmjs.com/
-https://devdocs.io/npm/
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
-https://www.w3schools.com/nodejs/
+https://www.w3schools.com/html/
 
 ```
 
