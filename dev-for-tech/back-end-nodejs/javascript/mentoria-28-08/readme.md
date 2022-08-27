@@ -39,7 +39,7 @@ Repositório do projeto de Sistema de Controle de Matrículas da Gama Academy
 [![Linkedin: SEU NOME](https://img.shields.io/badge/-USERNAME-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/arthur-neves-de-oliveira-sistemas-de-informacao/)](https://www.linkedin.com/in/arthur-neves-de-oliveira-sistemas-de-informacao/)
 [![Linkedin: SEU NOME](https://img.shields.io/badge/-USERNAME-blue?style=flat-square&logo=Linkedin&logoColor=white&link=inserir_link_do_linkedin_aqui_samara)](inserir_link_do_linkedin_aqui_samara)
 [![Linkedin: SEU NOME](https://img.shields.io/badge/-USERNAME-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/isaac-br%C3%ADgido-rodrigues-dos-santos-6244312a/)](https://www.linkedin.com/in/isaac-br%C3%ADgido-rodrigues-dos-santos-6244312a/)
-[![Gmail Badge](https://img.shields.io/badge/-seuemail@email.com-006bed?style=flat-square&logo=Gmail&logoColor=white&link=mailto:NOSSO-EMAIL)](mailto:NOSSO-EMAIL)
+[![Gmail Badge](https://img.shields.io/badge/-projetogama@email.com-006bed?style=flat-square&logo=Gmail&logoColor=white&link=mailto:projetogama@gmail.com)](mailto:projetogama@gmail.com)
 [![GitHub SEU NOME](https://img.shields.io/github/followers/artstar10?label=follow&style=social)](LINK-DO-SEU-GITHUB)
 
 
