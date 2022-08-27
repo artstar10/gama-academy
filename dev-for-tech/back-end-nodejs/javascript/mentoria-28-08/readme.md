@@ -1,6 +1,6 @@
 <h3> 👨‍💼 &nbsp;Sobre o repositório </h3>
 
-Esse repositório mostra tudo o quê pode ser feito com o Node.js
+Repositório do projeto de Sistema de Controle de Matrículas da Gama Academy
 
 - Javascript
 - HTML
