@@ -1,0 +1,51 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+	<!-- Chamada da função Javascript - JSON(JavaScript Object Notation)
+	JSON -> JSON é basicamente um formato leve de troca de informações/dados entre sistemas 
+	-->
+		 <script type="text/javascript" src="javascript/funcoes.js"></script> 
+         <link rel="stylesheet" href="css/estilo.css">
+
+
+
+</head>
+<body>
+	    
+		<!-- Formulário para cadastro dos clientes -->
+	<form id="frmCadastro">
+
+				<label for="txtCodigo">Código:</label>
+				<input type="text" id="txtCodigo" /><br>
+
+				<label for="txtNome">Nome:</label>
+				<input type="text" id="txtNome" /><br>
+
+				<label for="txtTelefone">Telefone:</label>
+				<input type="text" id="txtTelefone"/><br>
+
+				<label for="txtEmail">Email:</label>
+				<input type="text" id="txtEmail"/><br>
+
+				<label for="txtStatus">Status:</label>
+				<input type="text" id="txtStatus" disabled /><br>
+
+				<label for="txtDtCad">Data Cad:</label>
+				<input type="date" id="txtDtCad"/><br>
+
+				<label for="txtHora">Hora Cad:</label>
+				<input type="time" id="txtHora"/><br>
+
+				<input type="submit" value="Salvar" id="btnSalvar"/>
+			
+
+	</form>
+	<!-- Tabela para listar os clientes com possibilidade de alterar/excluir -->
+	<table id="tblListar">
+
+	</table>
+	<p id="prgfrm">
+	</p>
+</body>
+</html>
