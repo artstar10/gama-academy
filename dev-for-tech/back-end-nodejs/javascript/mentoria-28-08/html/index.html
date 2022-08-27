@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Controle de Matriculas da Gama Academy </title>
+  
   <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
@@ -34,10 +35,12 @@
         </div>
         <div class="col-md-4 form-group">
           <select class="form-select form-control" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option selected>Selecione sua opção de Curso</option>
+            <option value="1">Java</option>
+            <option value="2">JavaScript</option>
+            <option value="3">Banco de Dados</option>
+            <option value="4">HTML</option>
+            <option value="5">Node JS</option>
           </select>
         </div>
         
@@ -68,13 +71,44 @@
 
       </form>
       <!-- Tabela para listar os clientes com possibilidade de alterar/excluir -->
-      <table id="tblListar" class="table">
-
+      <table id="tblListar" class="table mt-5">
+        <thead>
+          <tr>
+            <th scope="col">#RM</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Data Cadastro</th>
+            <th scope="col">Hora Cadastro</th>
+            <th scope="col">Data de Realizacao do Curso:</th>
+            <th scope="col">Hora de Realizacao do Curso:</th>
+            <th scope="colspan 3">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">11101012</th>
+            <td>Mark</td>
+            <td>Otto@mail.com</td>
+            <td>(11) 90999-8982</td>
+            <td>JavaScript</td>
+            <td>29/08/2021</td>
+            <td>08:22</td>
+            <td>29/09/2021</td>
+            <td>08:00</td>
+            <td>Editar &#x270D;</td>
+            <td>Excluir &#128465;</td>
+          </tr>
+        </tbody>
       </table>
       <p id="prgfrm">
       </p>
   </div>
   <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+  <script src="../js/funcoes.js"></script>
 </body>
 </html>
