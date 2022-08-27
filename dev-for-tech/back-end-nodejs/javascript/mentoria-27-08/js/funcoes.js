@@ -31,10 +31,11 @@ $(function(){
 			Nome     		: $("#txtNome").val(),
 			Email 			: $("#txtEmail").val(),
 			Celular   		: $("#txtCelular").val(),
+			Curso				: $("#selectCurso :selected").text(),
 			DtCad    		: $("#txtDataCadastro").val(),
 			HoraCad   		: $("#txtHoraCadastro").val(),
 			DtRealizacao    : $("#txtDataRealizacaoCurso").val(),
-			HoraRealizacao  : $("#txtRealizacaoCurso").val()
+			HoraRealizacao  : $("#txtHoraRealizacaoCurso").val()
 		});
 
 		
@@ -48,16 +49,19 @@ $(function(){
 
 	// Função para editar clientes
 	function Editar(){
+		
 		tbAlunos[indice_selecionado] = JSON.stringify({
 				RM   			: $("#txtRM").val(),
 				Nome     		: $("#txtNome").val(),
 				Email 			: $("#txtEmail").val(),
+				Curso				: $("#selectCurso :selected").text(),
 				Celular   		: $("#txtCelular").val(),
 				DtCad    		: $("#txtDataCadastro").val(),
 				HoraCad   		: $("#txtHoraCadastro").val(),
 				DtRealizacao    : $("#txtDataRealizacaoCurso").val(),
-				HoraRealizacao  : $("#txtRealizacaoCurso").val()
+				HoraRealizacao  : $("#txtHoraRealizacaoCurso").val()
 			});
+			
 		localStorage.setItem("tbAlunos", JSON.stringify(tbAlunos));
 		alert("Informações editadas.")
 		operacao = "A";
@@ -66,14 +70,15 @@ $(function(){
 	// Função para listar clientes
 	function Listar(){
 		$("#tblListar").html("");
+		$("#tblListar").addClass("table");
 		$("#tblListar").html(
 			"<thead>"+
 			"	<tr>"+
-			"<th></th>"+
 			"	<th>RM</th>"+
 			"	<th>Nome</th>"+
 			"	<th>Celular</th>"+
 			"	<th>Email</th>"+
+			"	<th>Curso</th>"+
 			"	<th>Data Cadastro</th></th>"+
 			"	<th>Hora Cadastro</th>"+
 			"	<th>Data a Realizar o Curso</th>"+
@@ -89,17 +94,18 @@ $(function(){
 			var alu = JSON.parse(tbAlunos[i]);
 			// Formatar data para o format brasileiro dia, mes, ano
 			var dtfinalCad = alu.DtCad.substring(8,10) + "/" +alu.DtCad.substring(5,7)  +"/"  +alu.DtCad.substring(0,4);
-			var dtfinalRealizar = alu.DtRealizacao.substring(8,10) + "/" +alu.DtRealizacaoCad.substring(5,7)  +"/"  +alu.DtRealizacao.substring(0,4);
+			var dtfinalRealizar = alu.DtRealizacao.substring(8,10) + "/" +alu.DtRealizacao.substring(5,7)  +"/"  +alu.DtRealizacao.substring(0,4);
 		  	$("#tblListar tbody").append("<tr>"+
-									 	 "	<td><img src='../img/edit.png' alt='"+i+"' class='btnEditar'/><img src='../img/delete.png' alt='"+i+"' class='btnExcluir'/></td>" + 
 										 "	<td>"+alu.RM+"</td>" + 
 										 "	<td>"+alu.Nome+"</td>" + 
 										 "	<td>"+alu.Celular+"</td>" + 
 										 "	<td>"+alu.Email+"</td>" + 
+										 "	<td>"+alu.Curso+"</td>" + 
 										 "	<td>"+dtfinalCad+"</td>" + 
 										 "	<td>"+alu.HoraCad+"</td>" + 
 										 "	<td>"+dtfinalRealizar+"</td>" + 
 										 "	<td>"+alu.HoraRealizacao+"</td>" +
+										 "	<td><img src='../img/edit.png' alt='"+i+"' class='btnEditar'/><img src='../img/delete.png' alt='"+i+"' class='btnExcluir'/></td>" + 
 		  								 "</tr>");
 		 }
 	}
@@ -141,12 +147,18 @@ $(function(){
 		$("#txtNome").val(alu.Nome);
 		$("#txtCelular").val(alu.Celular);
 		$("#txtEmail").val(alu.Email);
-		$("#txtDataCadastro").val()(alu.DtCad);
-		$("#txtHoraCadastro").val()(alu.HoraCad);
-		$("#txtDataRealizacaoCurso").val()(alu.DtRealizacao);
-		$("#txtRealizacaoCurso").val()(alu.HoraRealizacao);
+		$("#selectCurso :selected").text(alu.Curso),
+		$("#txtDataCadastro").val(alu.DtCad);
+		$("#txtHoraCadastro").val(alu.HoraCad);
+		$("#txtDataRealizacaoCurso").val(alu.DtRealizacao);
+		$("#txtRealizacaoCurso").val(alu.HoraRealizacao);
 		$("#txtRM").attr("readonly","readonly");
 		$("#txtNome").focus();
+		$("#txtNome").attr("readonly", true);
+		$("#txtEmail").attr("readonly", true);
+		$("#txtCelular").attr("readonly", true);
+		$("#txtDataCadastro").attr("readonly", true);
+		$("#txtHoraCadastro").attr("readonly", true);
 	});
 	// Ação com base nos eventos do botão Excluir
 	$("#tblListar").on("click", ".btnExcluir", function(){
@@ -155,7 +167,6 @@ $(function(){
 		Listar();
 	});
 
-	// ultimo codigo
 	//var ultimo = JSON.parse(tbAlunos.slice(-1));
 	//var ultconv = parseInt(ultimo.Codigo);
 	
@@ -206,7 +217,7 @@ $("#txtNome").change(function () {
 	$("#txtDataCadastro").val(str_data_Brazil);
 	$("#txtHoraCadastro").val(hora_geral);
 	$("#txtDataRealizacaoCurso").val(str_data_Brazil);
-	$("#txtRealizacaoCurso").val(hora_geral);
+	$("#txtHoraRealizacaoCurso").val(hora_geral);
 
 	//alert(hora_geral);
 
