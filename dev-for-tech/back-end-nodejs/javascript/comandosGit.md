@@ -41,5 +41,5 @@
 > git pull origin develop
 **PARA MODIFICAR O NOME DE UMA BRANCH LOCAMENTE**:
 > git branch -m "antigo-nome" "novo-nome"
-**PARA rRENOMEAR COMENTÁRIO DE UM COMMIT**:
+**PARA RENOMEAR COMENTÁRIO DE UM COMMIT**:
 > git config core.commentChar "*"
