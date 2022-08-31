@@ -21,4 +21,9 @@ Esse repositório é de um treinamento do programa Dev For Tech da parceria entr
 ```
 Semana 1: _Metodologias Ágeis, Git, Lógica de Programação, Fundamentos de Javascript
 ```
+# Fontes
+```
+https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript
+
+```
 
